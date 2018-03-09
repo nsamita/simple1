@@ -1,3 +1,18 @@
+from tkinter import *
+from turtle import TurtleScreen, RawTurtle
+class Disc(RawTurtle):
+    def __init__(self, cv):
+        RawTurtle.__init__(self, cv, shape="square", visible=False)
+        self.pu()
+        self.goto(-140, 200)
+        
+    def config(self, k, n):
+        self.hideturtle()
+        f = float(k + 1) / n
+        self.shapesize(0.5, 1.5 + 5 * f)  # square-->rectangle
+        self.fillcolor(f, 0, 1 - f)
+        self.showturtle()
+
 class Hanoi(object):
     def __init__(self,n=3,start="A",workspace="B",destination="C"):
         self.startp = ProcessLookupError(start,0,0)
