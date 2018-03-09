@@ -10,14 +10,14 @@ class Animation_area(QWidget):
         QWidget.__init__(self, None)
         self.setMinimumSize(500, 500)
 
-        self.arena_w = 500
-        self.arena_h = 500
+        self.arena_w = 800
+        self.arena_h = 600
         self.lastMouseX = 0
         self.lastMouseY = 0
         self.mouseX = 0
         self.mouseY = 0
         self.myPenWidth = 5
-        self.myPenColor = Qt.green
+        self.myPenColor = Qt.black
         imageSize = QSize(500, 500)
         self.image = QImage(imageSize, QImage.Format_RGB32)
         self.lastPoint = QPoint()
