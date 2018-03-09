@@ -13,7 +13,7 @@ class Disc(RawTurtle):
         self.fillcolor(f, 0, 1 - f)
         self.showturtle()
 
-class Pole(list): # pole here
+class Pole(list): # pole here ######
     def __init__(self, x):
         self.x = x
 
