@@ -22,8 +22,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Hanoi.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="lab8_1.py" />
     <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="paint.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
