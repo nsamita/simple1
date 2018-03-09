@@ -4,7 +4,7 @@ class Disc(RawTurtle):
     def __init__(self, cv):
         RawTurtle.__init__(self, cv, shape="square", visible=False)
         self.pu()
-        self.goto(-140, 200)
+        self.goto(-140, 200) #gotoja
         
     def config(self, k, n):
         self.hideturtle()
