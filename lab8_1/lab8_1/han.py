@@ -1,5 +1,5 @@
-from Disk import *
-from Pole import *
+from disk import *
+from Hanoi import *
 from turtle import *
 
 class Hanoi(object):
