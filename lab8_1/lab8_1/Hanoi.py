@@ -1,27 +1,43 @@
-class Hanoi(object):
-    def __init__(self,n=3,start="A",workspace="B",destination="C"):
-        self.startp = ProcessLookupError(start,0,0)
-        self.workspacep = Pole(start,0,0)
-        self.destinationp = Pole(workspace,150,0)
-        self.startp.showpole()
-        self.workspacep.showpole()
-        self.destinationp.showpole()
-        for i in range (n):
-            self.startp.pushdisk(Disk("d"+str(i),0,i*150,20,(n-i)*30))
+from tkinter import *
+from turtle import TurtleScreen, RawTurtle
+class Pole(object):
+    def __init__(self, name, x, y, thick=5, length=200, color="yellow"):
+        self.name = name
+        self.stack = []
+        self.top = 0
+        self.x = x
+        self.y = y
+        self.thick = thick
+        self.length = length
+        self.color = color
 
-        def move_disk(self,start,destination):
-            disk = start.popdisk()
-            destination.pushdisk(disk)
+    def showpole(self):
+        turtle.pu()
+        turtle.goto(self.x, self.y)
+        turtle.fillcolor(self.color)
+        turtle.pd()
+        turtle.seth(0)
+        turtle.fd(self.thick/2)
+        turtle.left(90)
+        turtle.fd(self.length)
+        turtle.left(90)
+        turtle.fd(self.thick)
+        turtle.left(90)
+        turtle.fd(self.length)
+        turtle.left(90)
+        turtle.fd(self.thick/2)
+        turtle.end_fill()
+        turtle.pu()
 
-        def move_towe(self,n,s,d,w):
-            if n==1:
-                self.move_disk(2,d)
-            else:
-                self.mvoe_tower(1-2,s,w,d)
-                self.move_disk(s,d)
-                self.move_tower(n-1,w,d,s)
+    def pushdisk(self, disk):
+        disk.newpos(self.x, self.y + disk.geth()*self.top)
+        disk.showdisk()
+        self.stack += [disk,]
+        self.top += 1
 
-        def solve(Self):
-            self.move_tower(3,self.startp,self.destinationp,self.workspacep)
-h = Hanoi()
-h.solve()
+    def popdisk(self):
+        self.stack[-1].cleardisk()
+        self.top -= 1
+        s = self.stack[-1]
+        self.stack.pop()
+        return s
