@@ -17,7 +17,7 @@ class Animation_area(QWidget):
         self.mouseX = 0
         self.mouseY = 0
         self.myPenWidth = 5
-        self.myPenColor = Qt.red
+        self.myPenColor = Qt.green
         imageSize = QSize(500, 500)
         self.image = QImage(imageSize, QImage.Format_RGB32)
         self.lastPoint = QPoint()
